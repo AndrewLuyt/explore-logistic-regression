@@ -1,6 +1,8 @@
 # Explore 1-variable logistic regression by allowing a user to interactively
 # choose slope and intercept coefficients for the linear component of a
 # logistic model, using the manipulate library.
+# Source this file, then click the gear icon which should be in the top left
+# corner to select the coefficients.
 # Plots of the linear function and the associated logistic function are created,
 # along with dotted plots for the detault coefficients of intercept=0
 # and slope=1.
@@ -70,12 +72,11 @@ myLogisticPlot <- function(b0, b1)  {
     linear.plot + logistic.plot
 }
 
-# The bug mentioned below seems to have been fixed?
 # there was some sort of bug in manipulate that hid the gear icon. Running this
 # manipulate call first makes the gear show up and only THEN does the
 # gear icon show in the graph WE plotted.
 # https://stackoverflow.com/questions/62982030/slider-doesnt-show-up-as-i-use-manipulate-function
-# manipulate(plot(1:5, cex=size), size = slider(0.5,10,step=0.5))
+manipulate(plot(1:5, cex=size), size = slider(0.5,10,step=0.5))
 manipulate(myLogisticPlot(b0 = intercept, b1 = slope),
            intercept=slider(-3, 3, step=.5, initial = 0),
            slope=slider(-2, 2, step=.05, initial = 1))
