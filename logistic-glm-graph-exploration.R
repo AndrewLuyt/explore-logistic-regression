@@ -7,6 +7,8 @@
 # A single point at x=1 is plotted on the logistic function to illustrate how
 # changing coefficients defines different probability distributions at a given x.
 # The plots are done using ggplot. Patchwork is used to arrange them side by side.
+#
+# Andrew Luyt, August 3 2022
 
 library(manipulate)
 library(tidyverse)
